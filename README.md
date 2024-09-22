@@ -7,6 +7,47 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+ ---
+# Laravel Multi Tenant
+### Laravel 11 with FilamentPHP
+### PostgreSQL, Redis, Meilisearch, Minio, Mailpit
+
+---
+
+# Instalation 
+
+### From scrash:
+
+Instalar [laravel](https://laravel.com/docs/11.x/installation#docker-installation-using-sail) desde cero
+```bash
+curl -s "https://laravel.build/laravel-filamentphp?with=pgsql,redis,meilisearch,minio,mailpit" | bash
+
+cd /laravel-filamentphp
+
+./vendor/bin/sail up
+```
+entrar al contenedor del proyecto
+```bash
+docker exec -it Laravel-tenant bash
+```
+
+Instalar [FilamentPHP](https://filamentphp.com/docs/3.x/panels/installation)
+```bash
+composer require filament/filament:"^3.2" -W
+ 
+php artisan filament:install --panels
+```
+Crear un usuario para el Panel de FilamentPHP
+```bash
+php artisan make:filament-user
+```
+
+
+
+
+
+ ---
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
