@@ -105,7 +105,8 @@ protected static ?int $navigationSort = 1;
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\StatesRelationManager::class,
+            RelationManagers\EmployeesRelationManager::class
         ];
     }
 
