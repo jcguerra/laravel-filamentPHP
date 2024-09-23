@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('date_hired')->nullable();
             $table->timestamps();
 
+            $table->foreignId('team_id')->constrained()->cascadeOnDelete();
             $table->foreignId('country_id')->constrained()->cascadeOnDelete();
             $table->foreignId('state_id')->constrained()->cascadeOnDelete();
             $table->foreignId('city_id')->constrained()->cascadeOnDelete();
