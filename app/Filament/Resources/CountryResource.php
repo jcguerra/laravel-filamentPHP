@@ -28,7 +28,16 @@ protected static ?int $navigationSort = 1;
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('code')
+                    ->required()
+                    ->maxLength(3),
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('phonecode')
+                    ->required()
+                    ->numeric()
+                    ->maxLength(5),
             ]);
     }
 
@@ -36,8 +45,33 @@ protected static ?int $navigationSort = 1;
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
+                    ->label('Id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('code')
+                    ->label('Country Code')
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Country Name')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('phonecode')
+                    ->label('Country Phonecode')
+                    ->numeric()
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
+//            ->defaultSort('name','desc')
             ->filters([
                 //
             ])
