@@ -18,6 +18,12 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'is_admin' => true,
+        ]);
+        $this->call([
+            CountrySeeder::class,
+            StateSeeder::class,
+            CitySeeder::class
         ]);
     }
 }

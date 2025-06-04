@@ -41,6 +41,22 @@ Crear un usuario para el Panel de FilamentPHP
 ```bash
 php artisan make:filament-user
 ```
+# FilamentPHP
+
+Crear modelos con filament
+```bash
+php artisan make:model
+```
+Crear filament resource
+```bash
+php artisan make:filement-resource {model name}
+
+php artisan make:filement-resource {model name} --generate
+
+php artisan make:filement-resource {model name} --soft-deletes --generate
+
+php artisan make:filement-resource {model name} --generate --view
+```
 
 
 
